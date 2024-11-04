@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="bin\Release\net6.0-windows\TextureConverter.runtimeconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Release\TextureConverter.runtimeconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Release\net6.0-windows\TextureConverter.dll" />
+    <None Include="bin\Release\net6.0-windows\Magick.NET-Q16-AnyCPU.dll" />
+    <None Include="bin\Release\net6.0-windows\Magick.NET.Core.dll" />
+    <None Include="bin\Release\net6.0-windows\publish\Magick.NET-Q16-AnyCPU.dll" />
+    <None Include="bin\Release\net6.0-windows\publish\Magick.NET.Core.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="TextureScaler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ConvertPBRtoEnfusion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
